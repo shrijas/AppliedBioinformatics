@@ -1,0 +1,5 @@
+# To download a data set from the genome in a bottle project
+wget https://sra-download.ncbi.nlm.nih.gov/traces/sra37/SRR/001539/SRR1576250
+
+# To load the SRAtools to be able to convert SRA-format to Fastq
+module load bioinfo-tools sratools/2.9.6-1
