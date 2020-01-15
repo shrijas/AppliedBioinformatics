@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -A snic2017-7-315
+#SBATCH -p core
+#SBATCH -n 20
+#SBATCH -t 200:00:00
+#SBATCH -J vg_index
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user nikiforos.pyrounakis.0585@student.uu.se
+
+#Modules
+
+#Your commands
+singularity exec /home/georg/vg.sif vg index -x GRCh38_reference_index_new.xg -g GRCh38_reference_index.gcsa -k 16 GRCh38_reference_grap.vg
