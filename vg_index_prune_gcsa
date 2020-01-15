@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -A snic2017-7-315
+#SBATCH -p core
+#SBATCH -n 22
+#SBATCH -t 150:00:00
+#SBATCH -J vg_index_gcsa_prune
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user nikiforos.pyrounakis.0585@student.uu.se
+
+#Modules
+
+#Your commands
+singularity exec /home/georg/vg.sif vg prune -r GRCh38_reference_grap.vg > GRCh38_reference_graph_pruned.vg 
+singularity exec /home/georg/vg.sif vg index -g GRCh38_reference_graph_gcsa.gcsa GRCh38_reference_graph_pruned.vg
