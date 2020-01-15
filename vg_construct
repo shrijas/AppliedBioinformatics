@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -A snic2017-7-315
+#SBATCH -p core
+#SBATCH -n 2
+#SBATCH -t 10:00:00
+#SBATCH -J vg_run
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user nikiforos.pyrounakis.0585@student.uu.se
+
+#Modules
+    • singularity exec /home/georg/vg.sif vg construct -r hs38DH_new.fa -v 00-common_all.vcf.gz 
+      -n 1=chr1 -n 2=chr2 -n 3=chr3 -n 4=chr4 -n 5=chr5 -n 6=chr6 -n 7=chr7 -n 8=chr8 -n 9=chr9 -n 10=chr10 -n 11=chr11 -n 12=chr12 -n 13=chr13 -n 14=chr14 -n 15=chr15 -n 16=chr16 -n 17=chr17 -n 18=chr18 -n 19=chr19 -n 20=chr20 -n 21=chr21 -n 22=chr22 -n X=chrX -n Y=chrY > genome_reference_graph.vg
