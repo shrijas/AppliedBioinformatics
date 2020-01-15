@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -A snic2017-7-315
+#SBATCH -p core
+#SBATCH -n 10
+#SBATCH -t 200:00:00
+#SBATCH -J bwa_map
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user nikiforos.pyrounakis.0585@student.uu.se
+
+#Modules
+module load bioinfo-tools
+module load bwa/0.7.8
+module load samtools/1.10
+
+
+bwa mem hs38DH_new.fa /proj/uppstore2017220/applied_bioinformatics/1_data/adams_data/NA10860_nano_R1.fastq.gz /proj/uppstore2017220/applied_bioinformatics/1_data/adams_data/NA10860_nano_R2.fastq.gz |samtools view -bS > GRCh38_bwa_mapped.bam 
